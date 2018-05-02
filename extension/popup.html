@@ -1,0 +1,47 @@
+<!doctype html>
+<html><head>
+    <title>Add image popup</title>
+    <link href="popup.css" rel="stylesheet" />
+    <script src="popup.js"></script>
+</head><body>
+    <img id="sample" />
+    <form id="uploader" method="post">
+        <fieldset>
+            <legend><label for="url">Image URL</label></legend>
+            <input id="url" type="text" name="url" />
+        </fieldset>
+
+        <fieldset>
+            <legend><label for="tags">Tags</label></legend>
+            <textarea id="tags" name="tags" placeholder="please supply artist, species, gender, quantity, and pose, in addition to any relevant features"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend><label for="sources">Sources</label></legend>
+            <textarea id="sources" name="sources"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend><label for="title">Title</label></legend>
+            <input id="title" type="text" name="title" />
+        </fieldset>
+
+        <fieldset>
+            <legend><label for="desc">Description</label></legend>
+            <textarea id="desc" name="desc"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend><label for="rating_q">Rating</label></legend>
+            <input id="rating_e" name="rating" value="e" type="radio" />
+            <label for="rating_e">Explicit</label>
+
+            <input id="rating_q" name="rating" value="q" type="radio" checked="checked" />
+            <label for="rating_q">Questionable</label>
+
+            <input id="rating_s" name="rating" value="s" type="radio" />
+            <label for="rating_s">Safe</label>
+        </fieldset>
+        <input type="submit" value="Submit" />
+    </form>
+</body></html>
