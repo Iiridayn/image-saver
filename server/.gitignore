@@ -1,0 +1,7 @@
+/node_modules
+/.env
+/.tmuxp.yaml
+*.swo
+*.swp
+*.db
+*.vim
