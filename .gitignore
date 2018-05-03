@@ -1,5 +1,6 @@
+__pycache__
 /.tmuxp.yaml
+db.sqlite3
 *.swo
 *.swp
-*.db
 *.vim
