@@ -1,5 +1,5 @@
 chrome.contextMenus.create({
-	title: "Upload this image",
+	title: "Download/share image",
 	contexts: ['link', 'image', 'selection'], // TODO: selection; put more thought in
 	onclick(info, tab) {
 		const msg = {};

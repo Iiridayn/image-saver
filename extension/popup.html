@@ -33,14 +33,15 @@
 
         <fieldset>
             <legend><label for="rating_q">Rating</label></legend>
-            <input id="rating_e" name="rating" value="e" type="radio" />
-            <label for="rating_e">Explicit</label>
+            <input id="rating_s" name="rating" value="s" type="radio" />
+            <label for="rating_s" title="no overt sensuality">Safe</label>
 
             <input id="rating_q" name="rating" value="q" type="radio" checked="checked" />
-            <label for="rating_q">Questionable</label>
+            <label for="rating_q" title="cartoon nudity, notably sensual">Questionable</label>
 
-            <input id="rating_s" name="rating" value="s" type="radio" />
-            <label for="rating_s">Safe</label>
+            <input id="rating_e" name="rating" value="e" type="radio" />
+            <label for="rating_e" title="visible primary or secondary sexual characteristics">Explicit</label>
+            <!-- could add an x rating for sexually focused works... not useful to me though -->
         </fieldset>
         <input type="submit" value="Submit" />
     </form>

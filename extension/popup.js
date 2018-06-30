@@ -34,6 +34,7 @@ function fillPopup(data) {
 	if (data.rating)
 		document.getElementById('rating_' + data.rating).checked = true;
 }
+
 document.addEventListener('DOMContentLoaded', function() {
 	// request means I'm running in a tab, not a popup
 	chrome.runtime.onMessage.addListener(function(request/*, sender, callback*/) {
@@ -63,6 +64,17 @@ document.addEventListener('DOMContentLoaded', function() {
 					return console.warn("No response from content script!");
 				fillPopup(response);
 			});
+		});
+	});
+
+	document.getElementById('uploader').addEventListener('submit', function(event) {
+		event.preventDefault();
+		const url = document.getElementById('url').value;
+		const parts = new URL(url);
+		chrome.downloads.download({
+			url, filename: parts.hostname + parts.pathname,
+			// note - if user has "Ask where to save each file before downloading" on, they still get a prompt
+			saveAs: false, conflictAction: 'prompt',
 		});
 	});
 });
