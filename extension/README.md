@@ -13,6 +13,11 @@ TODO: config screen - set server. On server, maybe use file:///... urls for disp
 
 TODO: site support: should have a flag for sites which have a general content warning to prevent deep-linking bypassing that.
 
+TODO: apparently Google image search hotlinks... We can too then! (maybe; hotlink protection status along w/deeplink rating warning).
+TODO: fallback images - probably require JS turned on. (yep, srcset and <picture> both won't work for fallback _hosting_). Can make it Open Source compliant. Might be able to use WebRTC to _find_ the image host at least.
+TODO: local hosting w/relay and discovery servers; kinda like Syncthing, yeah. Prefer saved version always; things change, etc
+TODO: test for image version updates - means we need to store what header(s) we test against w/the image, so we don't have to keep re-downloading. We cache - but differently to most standards.
+
 /**
  * FIXME: generic handler needs to be able to change which image, for subsequent calls!!
  *
@@ -45,4 +50,5 @@ TODO: site support: should have a flag for sites which have a general content wa
  * sofurry
  * Weasyl
  * derpibooru
+ * Getty images (kinda picky, sued Google, so good to use as an example)
  */
