@@ -1,0 +1,19 @@
+{
+  "name": "image-extractor",
+  "version": "1.0.0",
+  "description": "Extracts image info and best size URLs from a number of hosting sites",
+  "main": "index.js",
+  "dependencies": {
+    "html-soup": "^2.0.0",
+    "phin": "^3.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "image"
+  ],
+  "author": "Michael Clark",
+  "license": "MIT"
+}
