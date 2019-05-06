@@ -1,7 +1,6 @@
 function fillPopup(data) {
-	if (data.src) {
-		document.getElementById('url').value = data.src;
-		document.getElementById('sources').value += data.src + "\n";
+	if (data.download) {
+		document.getElementById('url').value = data.download;
 
 		if (data.xhr) {
 			const ajax = new XMLHttpRequest();
@@ -38,15 +37,15 @@ function fillPopup(data) {
 document.addEventListener('DOMContentLoaded', function() {
 	// request means I'm running in a tab, not a popup
 	chrome.runtime.onMessage.addListener(function(request/*, sender, callback*/) {
-		if (request.src) {
-			//document.getElementById('sample').src = request.src;
+		if (request.download) {
+			//document.getElementById('sample').src = request.download;
 			// the src site (CDN) _must_ be in the permissions manifest!
 			// TODO: use this BLOB to upload - also from popup; unify code
 			// TODO: work with the XHR link too
-			fetch(request.src).then(response => response.blob()).then(file => {
+			fetch(request.download).then(response => response.blob()).then(file => {
 				const img = document.getElementById('sample');
 				img.src = URL.createObjectURL(file);
-				img.onload = function() { URL.revokeObjectURL(this.src); };
+				img.onload = function() { URL.revokeObjectURL(this.download); };
 			}).catch(console.error);
 		}
 		fillPopup(request);
@@ -58,11 +57,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		document.getElementById('sources').value += tabs[0].url + "\n";
 
-		chrome.tabs.executeScript({ file: 'content.js' }, function() {
-			chrome.tabs.sendMessage(tabs[0].id, '', function(response) {
-				if (!response)
-					return console.warn("No response from content script!");
-				fillPopup(response);
+		chrome.tabs.executeScript({ file: 'image_page_parser.js' }, function () {
+			chrome.tabs.executeScript({ file: 'content.js' }, function() {
+				chrome.tabs.sendMessage(tabs[0].id, '', function(response) {
+					if (!response)
+						return console.warn("No response from content script!");
+					fillPopup(response);
+				});
 			});
 		});
 	});

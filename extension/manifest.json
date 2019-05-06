@@ -3,7 +3,7 @@
 
 	"name": "Image uploader",
 	"description": "This extension uploads/downloads an image intelligently from various image hosting services",
-	"version": "0.1",
+	"version": "0.2",
 	"author": "Michael Clark",
 
 	"background": {

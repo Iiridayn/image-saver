@@ -14,11 +14,13 @@ chrome.contextMenus.create({
 			msg.desc = info.selectionText;
 			*/
 
-		chrome.tabs.executeScript({ file: 'content.js' }, function() {
-			chrome.tabs.create({
-				url: '/popup.html',
-			}, function() {
-				chrome.tabs.sendMessage(tab.id, msg, function() {});
+		chrome.tabs.executeScript({ file: 'image_page_parser.js' }, function () {
+			chrome.tabs.executeScript({ file: 'content.js' }, function() {
+				chrome.tabs.create({
+					url: '/popup.html',
+				}, function() {
+					chrome.tabs.sendMessage(tab.id, msg, function() {});
+				});
 			});
 		});
 	},

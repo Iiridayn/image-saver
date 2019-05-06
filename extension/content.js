@@ -41,110 +41,33 @@
 		if (h1)
 			return h1.innerText;
 
-		if (image.alt)
-			return image.alt;
-
-		return document.title;
+		return image.title || image.alt || document.title;
 
 		// just grab the filename portion of the url, excluding extension
 		//return image.src.match(/\/([^\/]+)\.[^.]+$/)[1];
 	}
 
-	const data = {
-		desc: window.getSelection().toString().trim(),
-	};
+	const imagePageParser = imagesaverext;
 
 	const url = document.URL;
-	if (url.match(/.deviantart.com/i)) {
-		const download = document.querySelector('a.dev-page-download');
-		if (download)
-			data.xhr = download.href;
+	const data = imagePageParser.parse(url,
+		document.querySelector.bind(document),
+		document.querySelectorAll.bind(document)
+	);
+	console.log('data', data);
 
-		data.title = document.querySelector('.dev-title-container h1 a').innerText;
-		data.desc = document.querySelector('.dev-description').innerText;
-
-		data.tags = [...document.querySelectorAll('.dev-about-tags-cc .discoverytag')]
-			.map(a => a.dataset.canonicalTag);
-
-		const artist = document.querySelector('.dev-title-container a.username');
-		if (artist) {
-			data.sources = [ artist.href ];
-			data.artist = artist.innerText;
-		}
-	} else if (url.match(/.furaffinity.net/i)) {
-		data.src = 'https:' + document.querySelector('#submissionImg').dataset.fullviewSrc;
-
-		data.title = document.querySelector('#page-submission th.cat').innerText;
-		// GAHHH I HATE YOU TABLE USER! table table table!
-		data.desc = document.querySelector('#page-submission table table table tr:nth-child(2)').innerText.trim();
-
-		const artist = document.querySelector('#page-submission table table table tr:nth-child(1) a');
-		data.sources = [ artist.href ];
-		data.artist = artist.innerText;
-
-		// stats - or, why it's even worth the bother "table table table" :P
-		data.tags = [];
-
-		// species
-		data.tags.push(document.querySelector(
-			'#page-submission .stats-container b:nth-of-type(5)'
-		).nextSibling.nodeValue.trim());
-		// gender
-		data.tags.push(document.querySelector(
-			'#page-submission .stats-container b:nth-of-type(6)'
-		).nextSibling.nodeValue.trim());
-
-		const keywords = document.querySelectorAll('#keywords a');
-		for (let i = 0, l = keywords.length; i < l; i++)
-			data.tags.push(keywords[i].innerText.trim());
-
-		// rating
-		const rating = document.querySelector('#keywords ~ div img').alt;
-		if (rating.match(/general/i))
-			data.rating = 's';
-		else if (rating.match(/mature/i))
-			data.rating = 'q';
-		else if (rating.match(/adult/i))
-			data.rating = 'e';
-	} else if (url.match(/.elfwood.com/i)) {
-		// just use candidate image, accurate enough for now
-
-		data.title = document.querySelector("h1").innerText;
-		data.desc = document.querySelector("p.plot").innerText;
-
-		const artist = document.querySelector("h2.artist a");
-		if (artist) {
-			data.sources = [ artist.href ];
-			data.artist = artist.innerText;
-		}
-	} else if (url.match(/.inkbunny.net/i)) {
-		console.log('TODO');
-	} else if (url.match(/.sofurry.com/i)) {
-		// TODO: broken
-		// TODO: just scrape.
-		/*
-		const sofurryURI = 'https://api2.sofurry.com/std/getSubmissionDetails?id=';
-		const ajax = new XMLHttpRequest();
-		ajax.onload = function() {
-			if (ajax.status < 200 || ajax.status >= 400)
-				return console.error("Sofurry broke - please email me the page url");
-			console.log(ajax);
-			console.log(JSON.parse(ajax.responseText));
-		};
-		console.log("ajax", sofurryURI + url.match(/\/([^\/]+)$/)[1]);
-		ajax.open('GET', sofurryURI + url.match(/\/([^\/]+)$/)[1], true);
-		data.src = false;
-		data.title = false;
-		*/
-	}
+	// prefer user selection
+	// TODO: Broken atm
+	if (window.getSelection().toString())
+		data.desc = window.getSelection().toString().trim();
 
 	chrome.runtime.onMessage.addListener(function(request, sender, callback) {
 		// Fall back to the largest image on the page - unless we have a context menu image
 		let image;
-		if (!('src' in data) && !(request && request.src)) {
+		if (!('download' in data) && !(request && request.src)) {
 			image = getCandidateImage();
 			if (image)
-				data.src = image.src;
+				data.download = image.src;
 		}
 		if (!('title' in data) && image)
 			data.title = guessAtTitle(image);
@@ -154,12 +77,12 @@
 			if (!('sources' in data))
 				data.sources = [];
 			if ('sources' in data)
-				data.sources.push(url);
+				data.sources.unshift(url);
 
 			// use context menu image as a better fallback than the largest on page
 			// since it's potentially an href to the image file, and not on page
-			if (!('src' in data) && request.src) {
-				data.src = request.src;
+			if (!('download' in data) && request.src) {
+				data.download = request.src;
 				const image = getImageFromSrc(request.src);
 				if (!('title' in data) && image)
 					data.title = guessAtTitle(image);
