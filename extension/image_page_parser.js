@@ -41,7 +41,7 @@ function handleFA({ qs, qsa }) {
 
 	const artist = qs('#page-submission table table table tr:first-child a');
 	// TODO: make sure both full view and normal view link are in the list
-	data.sources = [ 'https://www.furaffinity.net' + artist.href ];
+	data.sources = [ artist.href ];
 
 	data.artist = artist.innerText;
 	data.title = qs('#page-submission th.cat').innerText;
@@ -104,7 +104,9 @@ function handleE9or6({ qs, qsa }) {
 	const artists = [...qsa('.tag-type-artist a + a')];
 	data.artist = artists.map(a => a.innerText);
 
-	// TODO: desc
+	const desc = qs('.collapse-container .collapse-body');
+	if (desc)
+		data.desc = desc.innerText;
 
 	function tagToTag(prefix) {
 		const prepend = prefix ? prefix + ':' : '';

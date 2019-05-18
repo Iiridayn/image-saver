@@ -1,6 +1,6 @@
 const readline = require('readline');
 const util = require('util');
-const url = require('url');
+const urlLib = require('url');
 const path = require('path');
 const fsPromises = require('fs').promises;
 
@@ -116,7 +116,7 @@ function proxifyNode(node) {
 			}
 
 			if (property === 'innerText')
-				return getInnerText(target);
+				return getInnerText(target).trim();
 
 			if (property === 'dataset') {
 				const dataset = new Proxy(target, {
@@ -138,40 +138,54 @@ function proxifyNode(node) {
 	});
 }
 
+function normalizeUrl(parts, url) {
+	if (url[0] !== '/')
+		return url;
+	// single slash - relative path
+	if (url[1] !== '/')
+		return parts.protocol + '//' + parts.host + url;
+	// double slashes - just needs the protocol
+	return parts.protocol + url;
+}
+
 async function processLine(line, cookie) {
 	// skip commented lines
 	if (line[0] == '#')
 		return;
 
-	const bookmark = line; // TODO: check for spaces, etc?
+	const url = line; // TODO: check for spaces, etc?
 
-	const urlFile = path.basename(url.parse(bookmark).pathname);
+    const urlParts = urlLib.parse(url);
+	const urlFile = path.basename(urlParts.pathname);
 	if (urlFile.match(/\.(?:png|jpe?g|gif)$/))
 		return {
-			download: bookmark,
-			sources: [ bookmark ],
+			download: url,
+			sources: [ url ],
 			title: path.basename(urlFile, path.extname(urlFile)),
 		};
 
 	// TODO: check for cache iff dev mode
-	const cacheFile = cacheDir + '/' + encodeURIComponent(bookmark);
-	const res = await getFile(bookmark, { cacheFile, cookie });
+	const cacheFile = cacheDir + '/' + encodeURIComponent(url);
+	const res = await getFile(url, { cacheFile, cookie });
 	if (res.body === null) {
-		console.log(`missing ${bookmark}`);
+		console.log(`missing ${url}`);
 		return;
 	}
-	console.log(`got ${res.body.length} bytes for ${bookmark}`);
+	console.log(`got ${res.body.length} bytes for ${url}`);
 	const dom = htmlSoup.parse(res.body);
 	const proxified = Array.isArray(dom) ? dom.map(proxifyNode) : proxifyNode(dom);
 
-	const data = imagePageParser.parse(bookmark, buildQsFunc(proxified), buildQsaFunc(proxified));
+	const data = imagePageParser.parse(url, buildQsFunc(proxified), buildQsaFunc(proxified));
 
 	if (data === 'login') {
 		console.error('Need to login to get the file');
 		return;
 	}
 
-	data.sources.unshift(bookmark);
+	data.download = normalizeUrl(urlParts, data.download);
+	data.sources = data.sources.map(s => normalizeUrl(urlParts, s));
+
+	data.sources.unshift(url);
 
 	return data;
 }
