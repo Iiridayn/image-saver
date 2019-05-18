@@ -3,6 +3,7 @@
 // TODO: source should be artist gallery link, _not_ artist homepage link! - IB done
 // TODO: _also_ want artist's homepage(s)
 // TODO: add new urls to sources for old urls
+// TODO: track anti leaching sites
 
 function handleDA({ qs, qsa }) {
 	if (qs('#filter-warning.antisocial'))
@@ -241,6 +242,21 @@ function handleFNru({ qs, qsa }) {
 	return data;
 }
 
+function handleTLK({ qs, qsa }) {
+	const data = {};
+
+	data.download = qs('#thepicture').src;
+
+	const artist = qs('.artistname a');
+	data.sources = [ artist.href ];
+
+	data.artist = artist.innerText;
+	data.title = qs('.picture.standalone > a:first-child').innerText;
+	data.desc = qs('.picturecaption').innerText;
+
+	return data;
+}
+
 // Doesn't work as well on the server since img doesn't always declare dimensions
 // doesn't work for http://skittledeediddle.tumblr.com/image/19234061487 - picture tag instead of img.src
 function justFindTheBiggestImg({ qs, qsa }) {
@@ -264,6 +280,7 @@ const siteMap = new Map([
 	[/inkbunny.net/i, handleIB],
 	[/weasyl.com/i, handleWeasyl],
 	[/.furnation.ru/i, handleFNru],
+	[/fanart.lionking.org/i, handleTLK],
 ])
 
 // for browsers, qs = document.querySelector, qsa = document.querySelectorAll
