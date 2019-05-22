@@ -4,7 +4,20 @@
 // TODO: _also_ want artist's homepage(s)
 // TODO: add new urls to sources for old urls
 // TODO: track anti leaching sites
+// TODO: map their rating where exists to a range of our ratings
 
+/*
+TODO: smugmug, flickr, imgur, tumblr, photobucket, facebook, pinterest, shutterstock, vcl, art-3000.com, instagram, behance.net, twitter, artstation.com, te2.tewi.us, paintberri.com, ello.co?, twitch(?), cgsociety, dribble.com(?), newgrounds (has art), patreon, https://www.furiffic.com/, http://www.epilogue.net/?, side7.com, https://fanart.lionking.org/, conceptart.org
+TODO: test url set for all supported sites
+
+https://fanart.lionking.org/picture/327009/TheLionessAndTheDragon.jpg - huh, jpg in url
+https://ourartcorner.com/artwork/71311/OC-Halloween-Costumes-2018-Angeloe
+https://ourartcorner.com/artwork/70178/Aerial-Tag
+https://www.paigeeworld.com/post/5c49edbe5fed7df00f4f89ec/glorywof-featureme-shoutout-feedback-pwgallery-drawing-by-constelliarts
+https://www.facebook.com/NewMastersAcademy/photos/a.453163394751170/2142302639170562/?type=3&eid=ARD9TPrM8y-mpB5tzfPC0422i-Z3tGVftwoehTZlWc-GQwkVn-q4TQHAMnDeFVznHk9_CgLE7lTKZ1_W&__xts__%5B0%5D=68.ARB0r2pgDp3jwRoF-YhpqJhp2euzbxIlC_tsQr_YLti6ZDZK-U_jYTzhBNTYy-aCnmGg3cZrP6JxyHY2llpbs5vpoKhm34cwWBW_EFvOsYu38jsSwWgWvqO5K16TfzaXnJZ0p3D7nrZCzx7axd7cI5vyqSLEZHIizPExrdXmQ5JKvXqCOk_vfqUfD18b155ksk8XqRvDth31mTOd5zaMaH5tnTxCDE8Wc9Dcnb8po7Zsx9GVnmLOGATelQuvbVnN-PqLxzo07mH5zThUM_t_9iYEcIiFJHjmw7Pp39lvH31C0gbnfpxujhbT2jhm390Jp7rjZT7EruTunVisWtIryRVivjpQGwzx_aYY5zS3qGJrNTKK39sZoApSrgeJhbp7Ks2dh5pj3tQ4pO_ONOkkeWWW8UhawzBQkEPZSYwpH14d28LLopPyN76JeJyJpN6HVVH0X4NivOLpgOC0PNQvor0Lfh1lSFeo3gIyXc77jDdumPWtS919Ow&__tn__=EEHH-R
+*/
+
+// TODO: plumb DA category for some tags
 function handleDA({ qs, qsa }) {
 	if (qs('#filter-warning.antisocial'))
 		return 'login';
