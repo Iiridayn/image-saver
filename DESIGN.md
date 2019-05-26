@@ -18,28 +18,28 @@ Maybe we should just have a 0-4 rating system for eroticism, exposure, language,
 
 The site isn't really designed for smaller children - so the lowest rating is for 8 and up. Frankly, 95%+ of all art fits in this category - at least 80%+ of character focused art does. This is not overly restrictive.
 
-Sensuality: None. Not at all suggestive in any way. There are absolutely scenes in MLP which would not be a 0.
-Nudity: Clothed. No under-boob lines - think Velma from Scooby Doo. Most photographs or children's animations of animals are also acceptable here, so long as mammaries, the butt line, and the pubic triangle are not visible. Cartoon characters without a recognizable pubic triangle, such as Donald Duck, or such as when the character might as well be wearing baggy pants or a baggy shirt are also fine.
-Language: No cussing - not even common euphemisms. "Cartoon" swearing, such as "!@#$%" is acceptable. No "clever" put downs or aggravated taunting - mild taunting is acceptable.
-Gore: No blood. Scratches are probably okay, as also casts, bandages, etc. Cartoons have this one right.
+* Sensuality: None. Not at all suggestive in any way. There are absolutely scenes in MLP which would not be a 0.
+* Nudity: Clothed. No under-boob lines - think Velma from Scooby Doo. Most photographs or children's animations of animals are also acceptable here, so long as mammaries, the butt line, and the pubic triangle are not visible. Cartoon characters without a recognizable pubic triangle, such as Donald Duck, or such as when the character might as well be wearing baggy pants or a baggy shirt are also fine.
+* Language: No cussing - not even common euphemisms. "Cartoon" swearing, such as "!@#$%" is acceptable. No "clever" put downs or aggravated taunting - mild taunting is acceptable.
+* Gore: No blood. Scratches are probably okay, as also casts, bandages, etc. Cartoons have this one right.
 
 ### Teen - TV-14 - rating 1 for mild
 
 The implication is, by the time someone turns about 14 or so they have _some_ defenses against covert sensuality, and some experience dealing with these things. We shouldn't be the introducing source.
 
-Sensuality: Covert, or by implication - these are common in children's cartoons. _No_ overt sensuality.
-Nudity: Skin-tight clothes, bodysuit sorts of nudity with no hints of genetalia or nipples. Permits the butt line, boob line, or pubic triangle, but without parts or sheath, such as in The Lion King. _Any_ suggestion of nipples or the like goes to the next category.
-Language: Euphemisms or invented cuss words, so long as merely occasional. Put downs are acceptable. Bullying and most trolling language are not.
-Gore: Minor damage - a bit of blood or bruising is acceptable.
+* Sensuality: Covert, or by implication - these are common in children's cartoons. _No_ overt sensuality.
+* Nudity: Skin-tight clothes, bodysuit sorts of nudity with no hints of genetalia or nipples. Permits the butt line, boob line, or pubic triangle, but without parts or sheath, such as in The Lion King. _Any_ suggestion of nipples or the like goes to the next category.
+* Language: Euphemisms or invented cuss words, so long as merely occasional. Put downs are acceptable. Bullying and most trolling language are not.
+* Gore: Minor damage - a bit of blood or bruising is acceptable.
 
 ### Mature - NC-17, PG-13 - rating 2 for moderate
 
 The thought is that an 18-year old is a legal adult. They've probably already seen what they're going to see, and can now see much more besides. Truly, the only thing I'd care most about locking down is the sensuality - the rest is fine for a mature younger age. Legally the nudity level might still need to be locked though, even when not sensual.
 
-Sensuality: All overt sensuality goes here - virtually all bikini pictures, for example. Covert sexual behavior - such as nude snuggling - may also go here. So long as sex is only _hinted_ at or implied it may go in this level.
-Nudity: Exposed nipples and sexual organs present but obstructed by clothing. Visible sheath or scrotum also acceptable here, so long as no genitalia are visible.
-Language: Occasional cussing or extensive or intrusive cuss euphemisms go here. Use best judgment elevating from here to "aggravated" cussing based on frequency and word choice. Bullying and trolling language are acceptable here, so long as not aggravated. Hate speech is not, except as a caricature in works. Bullying/trolling/harassment or any degree of hate speech are not acceptable in comments.
-Gore: Up to non-specific gore/"giblets" - the upper limit of which would be found in One Punch Man.
+* Sensuality: All overt sensuality goes here - virtually all bikini pictures, for example. Covert sexual behavior - such as nude snuggling - may also go here. So long as sex is only _hinted_ at or implied it may go in this level.
+* Nudity: Exposed nipples and sexual organs present but obstructed by clothing. Visible sheath or scrotum also acceptable here, so long as no genitalia are visible.
+* Language: Occasional cussing or extensive or intrusive cuss euphemisms go here. Use best judgment elevating from here to "aggravated" cussing based on frequency and word choice. Bullying and trolling language are acceptable here, so long as not aggravated. Hate speech is not, except as a caricature in works. Bullying/trolling/harassment or any degree of hate speech are not acceptable in comments.
+* Gore: Up to non-specific gore/"giblets" - the upper limit of which would be found in One Punch Man.
 
 I honestly care less about this level than the preceding two - so long as eXplicit stuff doesn't end up here, I'm somewhat flexible on if things should be pushed higher.
 
@@ -47,10 +47,10 @@ I honestly care less about this level than the preceding two - so long as eXplic
 
 Some studies claim the brain continues to develop until about 25 or so. If people want to see this stuff then, they probably have a reasonable reason, as there are far too many alternative sites which specialize in it.
 
-Sensuality: Overt sexual behavior, such as touching genitalia, sexual penetration, masturbation, etc.
-Nudity: Pretty much the whole body is available at this level. Depictions of birth, laying eggs, etc are also permitted at this level.
-Language: Extensive or "aggravated" cussing is acceptable here. In comments, bullying/trolling/jocular harassment are acceptable here - let trolls troll trolls (trolls trolls troll, troll trolls). Any form of hate speech still not permitted in comments.
-Gore: Anatomical gore
+* Sensuality: Overt sexual behavior, such as touching genitalia, sexual penetration, masturbation, etc.
+* Nudity: Pretty much the whole body is available at this level. Depictions of birth, laying eggs, etc are also permitted at this level.
+* Language: Extensive or "aggravated" cussing is acceptable here. In comments, bullying/trolling/jocular harassment are acceptable here - let trolls troll trolls (trolls trolls troll, troll trolls). Any form of hate speech still not permitted in comments.
+* Gore: Anatomical gore
 
 Also encompasses movie R ratings. While some sites very reasonably split out one level further - to distinguish "artistic nudes" from depictions of sexual activity, I worry that having a useful split at that level could encourage use for tagging pornography. Ultimately, I'd rather state that those searching this level will be best served by tags.
 
@@ -59,11 +59,11 @@ Also encompasses movie R ratings. While some sites very reasonably split out one
 
 While I may permit bookmarking these to a local machine (how could I prevent it, anybody could just not tag), even bookmarks of such should never travel to machines I control. Further, while some of these are just my preference, some others are not legal to enable sharing and I'd really like my services to never be used for the like.
 
-Sensuality: Overt pornography. Sexual enticement as sole or primary purpose of the work, despite artistic merit. Anything sensual with participating prepubescent or preadolescent characters - "mental age" is not a defense. Anything sensual with depicted sexual fluids should certainly go here.
-Nudity: Unless purely anatomical, sexual fluids and defecation are only permitted here.
-Language: Non-caricature hate speech, racial slurs, etc. Aggravated bullying, trolling, or harassment. Suggestions to commit suicide, better of dead, etc.
-Gore: Depictions of torture, etc. Use your best judgment.
-Illegal Content: Laws based on admin and server jurisdictions. We will notify law enforcement in your area if aware, and prosecute if necessary.
+* Sensuality: Overt pornography. Sexual enticement as sole or primary purpose of the work, despite artistic merit. Anything sensual with participating prepubescent or preadolescent characters - "mental age" is not a defense. Anything sensual with depicted sexual fluids should certainly go here.
+* Nudity: Unless purely anatomical, sexual fluids and defecation are only permitted here.
+* Language: Non-caricature hate speech, racial slurs, etc. Aggravated bullying, trolling, or harassment. Suggestions to commit suicide, better of dead, etc.
+* Gore: Depictions of torture, etc. Use your best judgment.
+* Illegal Content: Laws based on admin and server jurisdictions. We will notify law enforcement in your area if aware, and prosecute if necessary.
 
 ## Moderation
 
