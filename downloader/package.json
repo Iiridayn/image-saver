@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "html-soup": "^2.0.0",
-    "phin": "^3.3.0"
+    "phin": "^3.7.1"
   },
   "devDependencies": {},
   "scripts": {
